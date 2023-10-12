@@ -1,1 +1,10 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+
+# GenoScreen
+
+A Ruby-on-rails web app to manage your genetic analysis.
+
+## Contributing
+
+Contributions are always welcome!
+
+See `contributing.md` for ways to get started.
