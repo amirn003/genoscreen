@@ -10,9 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_11_211231) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_12_085845) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "analyses", force: :cascade do |t|
+    t.string "name"
+    t.string "type"
+    t.string "sample"
+    t.bigint "user_id", null: false
+    t.bigint "laboratory_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["laboratory_id"], name: "index_analyses_on_laboratory_id"
+    t.index ["user_id"], name: "index_analyses_on_user_id"
+  end
+
+  create_table "laboratories", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +45,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_11_211231) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "variants", force: :cascade do |t|
+    t.string "gene"
+    t.integer "position_start"
+    t.integer "position_end"
+    t.string "type"
+    t.string "annotation"
+    t.bigint "analysis_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["analysis_id"], name: "index_variants_on_analysis_id"
+  end
+
+  add_foreign_key "analyses", "laboratories"
+  add_foreign_key "analyses", "users"
+  add_foreign_key "variants", "analyses"
 end
