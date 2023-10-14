@@ -10,6 +10,7 @@ class AnalysisController < ApplicationController
   end
 
   def show
+    @analyse = Analysis.find(params[:id])
   end
 
   def edit
