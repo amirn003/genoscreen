@@ -4,9 +4,16 @@ class AnalysisController < ApplicationController
   end
 
   def new
+    @analysis = Analysis.new
   end
 
   def create
+    @analysis = Analysis.new(analysis_params)
+    if @analysis.save
+      redirect_to @analysis, notice: 'Created successfully!'
+    else
+      render :new
+    end
   end
 
   def show
@@ -21,4 +28,12 @@ class AnalysisController < ApplicationController
 
   def destroy
   end
+
+
+  private
+
+  def analysis_params
+    params.require(:analysis).permit(:id, :name, :type, :sample, :user_id, :laboratory_id)
+  end
+
 end

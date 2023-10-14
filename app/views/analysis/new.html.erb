@@ -1,2 +1,24 @@
-<h1>Analysis#new</h1>
-<p>Find me in app/views/analysis/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Analysis#new</h1>
+
+      <%= simple_form_for(@analysis, url: analysis_index_path) do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+        <div class="form-inputs" style="width: 1000px;">
+          <%= f.input :name, placeholder: "Enter analysis name" %>
+          <%# <%= f.input :type, placeholder: "Enter analysis" %>
+          <%= f.input :sample, placeholder: "Sample" %>
+          <%= f.input :user_id, placeholder: "User" %>
+          <%= f.input :laboratory_id, placeholder: "Laboratory" %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
