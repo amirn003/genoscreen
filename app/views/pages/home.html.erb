@@ -1,9 +1,46 @@
-
-
 <div class="banner">
   <div class="container">
-    <h1>GenoScreen helps you manage your genetics data!</h1>
-    <p>Bring your analysis to the next level.</p>
-    <a class="btn-primary" href="#">Test it now!</a>
+    <h1>GenoScreen helps you manage your genetic data!</h1>
+    <p>Brings your analysis to the next level.</p>
+    <%= link_to "Test it now", analysis_index_path, class: "btn-primary" %>
   </div>
+</div>
+
+<div class="container mt-5 mb-5">
+  <h2 class="text-center"> How it works</h2>
+  <div class="cards">
+    <div class="card">
+      <%= image_tag "apply.svg", alt: "Apply" %>
+      <h4 class="mt-7">Apply</h4>
+      <p>Apply your first analysis.</p>
+    </div>
+    <div class="card">
+      <%= image_tag "learn.svg", alt: "Analyze" %>
+      <h4>Analyze</h4>
+      <p>Analyze your data.</p>
+    </div>
+    <div class="card">
+      <%= image_tag "product.svg", alt: "Discover" %>
+      <h4>Discover</h4>
+      <p>Discover new insights.</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="links">
+    <div class="link">
+      <a href="#">
+        <i class="fab fa-fw fa-facebook-f"></i>
+      </a>
+      <a href="#"><i class="fab fa-fw fa-github"></i></a>
+      <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
+    </div>
+  </div>
+  <%# <p>
+    This website was code with
+    <i class="fas fa-heart"></i>
+  </p> %>
+
+
 </div>
