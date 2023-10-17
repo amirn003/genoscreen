@@ -1,0 +1,29 @@
+.banner {
+  background-image: asset-url('genetics-homepage.jpeg');
+  background-size: cover;
+  background-position: center;
+  padding: 300px 0;
+}
+
+.container {
+  width: 900px;
+  margin: auto;
+}
+
+.banner h1{
+  color: #f8f9fa
+}
+
+.banner p {
+  color: #e9ecef;
+  opacity: .7;
+  font-size: 20px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: #e67e228a;
+  color: white;
+  border-radius: 40px;
+  padding: 15px 25px ;
+}
