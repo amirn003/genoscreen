@@ -1,5 +1,7 @@
 .banner {
-  background-image: asset-url('genetics-homepage.jpeg');
+  //background-image: asset-url('genetics-homepage.jpeg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), asset-url('genetics-homepage.jpeg');
+
   background-size: cover;
   background-position: center;
   padding: 300px 0;
