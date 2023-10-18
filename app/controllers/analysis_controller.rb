@@ -26,9 +26,8 @@ class AnalysisController < ApplicationController
 
   def update
     if @analysis.update(analysis_params)
-      redirect_to analysis_path(@analysis), notice: 'Updated successfully!'
+      redirect_to analysis_path(@analysis), notice: 'Updated successfully!', status: :see_other
     else
-      raise
       render :edit
     end
   end
