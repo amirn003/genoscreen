@@ -1,4 +1,6 @@
 class AnalysisController < ApplicationController
+  before_action :set_analysis, only: [:show, :edit, :update]
+
   def index
     @analysis = Analysis.all
   end
@@ -17,13 +19,18 @@ class AnalysisController < ApplicationController
   end
 
   def show
-    @analyse = Analysis.find(params[:id])
   end
 
   def edit
   end
 
   def update
+    if @analysis.update(analysis_params)
+      redirect_to analysis_path(@analysis), notice: 'Updated successfully!'
+    else
+      raise
+      render :edit
+    end
   end
 
   def destroy
@@ -31,6 +38,10 @@ class AnalysisController < ApplicationController
 
 
   private
+
+  def set_analysis
+    @analysis = Analysis.find(params[:id])
+  end
 
   def analysis_params
     params.require(:analysis).permit(:id, :name, :type, :sample, :user_id, :laboratory_id)
