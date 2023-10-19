@@ -2,9 +2,13 @@
   <div class="row">
     <div class="col">
       <h1>Analysis#index</h1>
-      <% @analysis.each do |analyse| %>
-        <%= analyse.name %>
-      <% end %>
+      <ul>
+        <% @analysis.each do |analyse| %>
+          <li> <%= analyse.name %> (<%= analyse.sample %>) </li>
+        <% end %>
+      </ul>
+      <%= link_to "New Analysis", new_analysis_path, class: "btn-primary" %>
+
     </div>
   </div>
 </div>
