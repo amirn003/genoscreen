@@ -4,7 +4,9 @@
       <h1>Analysis#index</h1>
       <ul>
         <% @analysis.each do |analyse| %>
-          <li> <%= analyse.name %> (<%= analyse.sample %>) </li>
+          <li> ID-<%= analyse.id %>: <%= link_to analyse.name, analysis_path(analyse) %>
+           (<%= analyse.sample %>)
+          </li>
         <% end %>
       </ul>
       <%= link_to "New Analysis", new_analysis_path, class: "btn-primary" %>
