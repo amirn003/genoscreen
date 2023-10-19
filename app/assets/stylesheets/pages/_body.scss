@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $light-gray;
+}
+
+a:hover {
+  box-shadow: inset 100px 0 0 0 #54b3d6;
+  color: white;
+}
+
+/* Custom design below! */
+.text-center {
+  text-align: center;
+  font-weight: bold;
+}
