@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="row">
+  <h1 class="text-center mt-3">Welcome to your panel analysis!</h1>
+  <div class="row mt-5">
     <div class="col-6">
-      <h1>Analysis#index</h1>
       <ul>
         <% @analysis.each do |analyse| %>
           <li> ID-<%= analyse.id %>: <%= link_to analyse.name, analysis_path(analyse) %>
@@ -11,7 +11,7 @@
       </ul>
     </div>
     <div class="col">
-      <div class="row mt-5">
+      <div class="row">
         <div class="col d-flex align-items-center justify-content-center">
           <%= link_to "New Analysis", new_analysis_path, class: "btn-primary" %>
         </div>
@@ -30,7 +30,7 @@
     <div class="col d-flex justify-content-center">
 
       <h3 class="mt-5">
-        Welcome to your panel analysis!
+
       </h3>
 
     </div>
