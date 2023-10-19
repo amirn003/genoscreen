@@ -1,5 +1,6 @@
 class AnalysisController < ApplicationController
-  before_action :set_analysis, only: [:show, :edit, :update]
+  before_action :authenticate_user!
+  before_action :set_analysis, only: [:show, :edit, :update, :destroy]
 
   def index
     @analysis = Analysis.all
@@ -33,6 +34,8 @@ class AnalysisController < ApplicationController
   end
 
   def destroy
+    @analysis.destroy
+    redirect_to analysis_index_url, notice: 'Analysis was successfully destroyed!', status: :see_other
   end
 
 

@@ -3,6 +3,12 @@
     <div class="col">
       <h1>Analysis#show</h1>
       <%= @analysis.name %>
+
+      <div class="button-container">
+        <%= link_to "Back to Analysis", analysis_index_path, class: "btn-primary" %>
+        <%# <%= button_to "Delete", analysis_index_url, class: "btn-primary", method: :delete%>
+        <%= button_to 'Destroy', @analysis, class: "btn-primary", method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
     </div>
   </div>
 </div>
