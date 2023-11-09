@@ -10,7 +10,7 @@ class LaboratoriesController < ApplicationController
   end
 
   def create
-    @laboratory = Laboratory.new(laboratory_params)
+    @laboratory = Laboratory.new(laboratories_params)
 
     if @laboratory.save
       redirect_to @laboratory, notice: 'Created successfully!'
@@ -27,7 +27,7 @@ class LaboratoriesController < ApplicationController
   end
 
   private
-  def laboratory_params
-    params.require(:laboratory).permit(:name, :location)
+  def laboratories_params
+    params.require(:laboratories).permit(:name, :location)
   end
 end
