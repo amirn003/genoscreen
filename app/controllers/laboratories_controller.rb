@@ -1,8 +1,14 @@
 class LaboratoriesController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_laboratory, only: [:show, :edit, :update, :destroy]
+
 
   def index
     @laboratories = Laboratory.all
+  end
+
+  def show
+
   end
 
   def new
@@ -13,7 +19,7 @@ class LaboratoriesController < ApplicationController
     @laboratory = Laboratory.new(laboratories_params)
 
     if @laboratory.save
-      redirect_to @laboratory, notice: 'Created successfully!'
+      redirect_to laboratory_path(@laboratory), notice: 'Created successfully!'
     else
       render :new
     end
@@ -28,6 +34,10 @@ class LaboratoriesController < ApplicationController
 
   private
   def laboratories_params
-    params.require(:laboratories).permit(:name, :location)
+    params.require(:laboratory).permit(:name, :location)
+  end
+
+  def set_laboratory
+    @laboratory = Laboratory.find(params[:id])
   end
 end

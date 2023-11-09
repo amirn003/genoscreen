@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  get 'laboratories/index'
-  get 'laboratories/new'
-  get 'laboratories/create'
-  get 'laboratories/edit'
-  get 'laboratories/update'
+  # get 'laboratories/index'
+  # get 'laboratories/new'
+  # get 'laboratories/create'
+  # get 'laboratories/edit'
+  # get 'laboratories/update'
+  resources :laboratories
   resources :analysis
   devise_for :users
   root to: "pages#home"
