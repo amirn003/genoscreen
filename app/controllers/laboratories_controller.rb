@@ -30,6 +30,11 @@ class LaboratoriesController < ApplicationController
   end
 
   def update
+    if @laboratory.update(laboratories_params)
+      redirect_to laboratory_path(@laboratory), notice: 'Updated successfully!'
+    else
+      render :edit
+    end
   end
 
   private

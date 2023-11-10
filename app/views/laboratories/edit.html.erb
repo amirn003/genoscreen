@@ -1,2 +1,16 @@
 <h1>Laboratories#edit</h1>
 <p>Find me in app/views/laboratories/edit.html.erb</p>
+
+<%= simple_form_for(@laboratory, url: laboratory_path(@laboratory), method: :put) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs" style="width: 1000px;">
+    <%= f.input :name, placeholder: "Enter Laboratory name" %>
+    <%= f.input :location, placeholder: "Location" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+<% end %>
