@@ -1,9 +1,11 @@
 <div class="container">
-  <div class="row">
-    <div class="col">
-      <%= @laboratory.name %>
-      <%= @laboratory.location %>
-
+  <div class="row mt-3">
+    <div class="col-6 lab-info">
+      <h1><%= @laboratory.name %></h1>
+      <p><%= @laboratory.location %></p>
+    </div>
+    <div class="col-6">
+      <%= image_tag "sante-medecine.jpeg", class: "lab-image img-fluid", alt: "Laboratory Image" %>
     </div>
   </div>
 </div>
