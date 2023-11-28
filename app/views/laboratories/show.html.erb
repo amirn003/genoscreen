@@ -3,6 +3,8 @@
     <div class="col-6 lab-info">
       <h1><%= @laboratory.name %></h1>
       <p><%= @laboratory.location %></p>
+      <%= link_to "Edit", edit_laboratory_path(@laboratory), class: "btn-primary" %>
+
     </div>
     <div class="col-6">
       <%= image_tag "sante-medecine.jpeg", class: "lab-image img-fluid", alt: "Laboratory Image" %>

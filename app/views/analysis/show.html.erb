@@ -6,6 +6,7 @@
 
       <div class="button-container">
         <%= link_to "Back to Analysis", analysis_index_path, class: "btn-primary" %>
+        <%= link_to "Edit", edit_analysis_path(@analysis), class: "btn-primary" %>
         <%= button_to 'Destroy', @analysis, class: "btn-primary", method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
     </div>
