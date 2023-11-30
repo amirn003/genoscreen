@@ -12,6 +12,7 @@ class AnalysisController < ApplicationController
 
   def create
     @analysis = Analysis.new(analysis_params)
+    @analysis.user = current_user
     if @analysis.save
       redirect_to @analysis, notice: 'Created successfully!'
     else
@@ -20,6 +21,7 @@ class AnalysisController < ApplicationController
   end
 
   def show
+    @users = User.all
   end
 
   def edit
@@ -46,7 +48,7 @@ class AnalysisController < ApplicationController
   end
 
   def analysis_params
-    params.require(:analysis).permit(:id, :name, :type, :sample, :user_id, :laboratory_id)
+    params.require(:analysis).permit(:id, :name, :type, :sample, :user_id, :username, :laboratory_id)
   end
 
 end
