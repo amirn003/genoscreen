@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  # get 'laboratories/index'
-  # get 'laboratories/new'
-  # get 'laboratories/create'
-  # get 'laboratories/edit'
-  # get 'laboratories/update'
+
+  # Sidekiq Web UI, only for admins.
+  require "sidekiq/web"
+  authenticate :user, ->(user) { user.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
   resources :laboratories
   resources :analysis
   devise_for :users
