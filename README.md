@@ -1,10 +1,43 @@
-
 # GenoScreen
 
-A Ruby-on-rails web app to manage your genetic analysis.
+GenoScreen is a Ruby on Rails web application designed to help you manage your genetic data analysis efficiently.
 
-## Contributing
+## Features
 
-Contributions are always welcome!
+- User authentication and authorization
+- Create, read, update, and delete (CRUD) operations for genetic analyses
+- User-friendly interface with Bootstrap integration
+- Parallel test execution with fixtures setup
+- Comprehensive test coverage using Rails' built-in testing framework
 
-See `contributing.md` for ways to get started.
+## Getting Started
+
+### Prerequisites
+
+- Ruby
+- Rails
+- Bundler
+
+### Installation
+
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/yourusername/genoscreen.git
+    cd genoscreen
+    ```
+
+2. Install dependencies:
+    ```sh
+    bin/setup
+    ```
+
+3. Prepare the database:
+    ```sh
+    bin/rails db:prepare
+    ```
+
+### Running the Application
+
+Start the Rails server:
+```sh
+bin/rails server
